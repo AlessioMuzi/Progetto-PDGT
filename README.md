@@ -27,7 +27,7 @@ meteo disponibile per un numero arbitrario di utenti. Ogni utente che si registr
 i dati delle città, che possono essere modificati in ogni momento dall'amministratore di sistema. Esso effettua l'accesso tramite 
 login e password.
 
-## Descrizione del architettura e delle scelte implementative
+## Descrizione dell'architettura e delle scelte implementative
 
 
 ## Documentazione dell’API implementata
