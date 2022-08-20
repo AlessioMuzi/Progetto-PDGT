@@ -44,6 +44,9 @@ il quale funge da client tramite richieste HTTP.
 
 # Documentazione dell’API implementata
 
+## Descrizione dei metodi (paradigma CRUD)
+
+
 ## Descrizione delle modalità della messa online del servizio
 
 
