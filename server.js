@@ -241,7 +241,7 @@ app.post('/meteo/aggiungiCitta', (req, res) => {
             {
               // viene accettato solo un body con Content-Type application/json
               if (req.get('Content-Type') != 'application/json') {
-                    res.sendStatus(415); // UNSUPPORTED MEDIA TIPE
+                    res.sendStatus(415); // UNSUPPORTED MEDIA TYPE
                     return;
                 }
 
