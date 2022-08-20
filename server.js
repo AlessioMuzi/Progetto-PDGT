@@ -403,17 +403,3 @@ app.post('/meteo/modificaDato', (req, res) => {
 const listener = app.listen(process.env.PORT, () => {
     console.log("L'applicazione è in ascolto sulla porta " + listener.address().port);
 });
-
-
-// funzione di prova
- var baseJson = {
-                    citta: 'Rimini',
-                    temperatura: {
-                        numero: 30,
-                        UM: 'celsius'
-                    },
-                    fenomeniAtmosferici: 'Sole',
-                    umidita: {
-                        numero: 80,
-                        UM: 'percento'
-                    }
