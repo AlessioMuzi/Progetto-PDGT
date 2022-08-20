@@ -1,4 +1,4 @@
-// import dei package necessari e definizione app
+// import dei package necessari per lo sviluppo e definizione app
 const express = require('express');
 const cookieparser = require('cookie-parser');
 const sha256 = require('js-sha256');
