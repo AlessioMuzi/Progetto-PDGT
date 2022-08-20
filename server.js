@@ -162,3 +162,51 @@ app.get('/meteo', (req, res) => {
         }
     });
 });
+
+// GET https://progettopdgt-alessiomuzi-meteo.glitch.me/meteo/meteoCitta/:id
+// metodo che restituisce tutti i dati meteo di una data città partendo dall'id
+app.get('/meteo/meteoCitta/:id', (req, res) => {
+    if (!req.cookies.sessionToken) {
+        res.sendStatus(401);
+        return;
+    }
+
+    const chiave = req.cookies.sessionToken;
+    console.log('Token: ' + chiave);
+
+    jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
+        if (err) {
+            console.log(err);
+            res.sendStatus(401);
+
+        } else {
+            console.log(chiaveVerificata);
+            if (chiaveVerificata.body.sub == 'gestore' || chiaveVerificata.body.sub == 'utente') {
+                const id = Number.parseInt(req.params.id);
+
+                if (isNaN(id)) {
+                    res.sendStatus(400);
+                    return;
+                }
+                if (!db.has(id)) {
+                    res.sendStatus(404);
+                    return;
+                }
+
+                const meteo = db.get(id);
+                res.format({
+                    'application/json': () => {
+                        res.json({
+                            citta: meteo.citta,
+                            temperatura: meteo.temperatura,
+                            fenomeniAtmosferici: meteo.fenomeniAtmosferici,
+                            umidita: meteo.umidita
+                        });
+                    }
+                });
+            } else {
+                res.sendStatus(401);
+            }
+        }
+    });
+});
