@@ -11,24 +11,24 @@ app.use(cookieparser());
 // registrazione degli utenti
 // amministratore del sistema
 // username: admin
-// password: master_key
+// password: masterkey
 const logins = new Map();
 
 logins.set('admin', 
    {
     id: 1,
     salt: '59603',
-    hash: 'cb327240b5ff041f73fba1bb4f17269634189a23bc870b8959a01eee472c428b'
+    hash: '59279df725b764aaebee5ad04e1fa4d6626ffa339770a27c66ee0f754115064c'
    });
 
 // utente generico
 // username: user1
-// password: temp_pass
+// password: temppass
 logins.set('user1', 
    {
     id: 2,
     salt: '68103',
-    hash: '8c38fbf9fa0516b2a6f09566051ade70957377646219b97b342e21797a467bcd'
+    hash: 'a668069b56ed45b490d255812ab28df908d1f9e2d020fb3b97c3ec175dcc8bdf'
    });
 
 // funzione per l'autenticazione
