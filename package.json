@@ -1,7 +1,7 @@
 {
   "name": "api-meteo",
   "version": "0.1.0",
-  "description": "Progetto PDGT - API web service per il meteo",
+  "description": "Progetto PDGT - Web service per il meteo",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
