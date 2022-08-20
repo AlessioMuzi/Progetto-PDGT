@@ -34,9 +34,9 @@ Glitch.com, che permette sia la scrittura di codice sia il deployment di web ser
 caratteristiche delle API RESTful. Per quanto riguarda l'autenticazione del client, sono stati usati dei JWT (JSON Web Token).
 I package utilizzati, integrati nel progetto tramite npm (Node Pacakge Manager), sono:
 
-cookie-parser - Utilizzata per usufruire dei cookie in fase di autenticazione.
-js-sha256 - Utilizzata per crittare le password tramite l'algoritmo SHA 256.
-njwt - Utilizzata per generare il JSON Web Token.
+cookie-parser - Utilizzata per usufruire dei cookie in fase di autenticazione.  
+js-sha256 - Utilizzata per crittare le password tramite l'algoritmo SHA 256.  
+njwt - Utilizzata per generare il JSON Web Token.  
 
 Per quanto riguarda il rilascio e il testing del servizio, sono stati utilizzati il già citato Glitch.com e Postman.com, il quale
 funge da client tramite richieste HTTP.
