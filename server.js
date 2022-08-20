@@ -334,3 +334,67 @@ app.delete('/meteo/eliminaCitta/:id', (req, res) => {
     });
 });
 
+// POST hhttps://progettopdgt-alessiomuzi-meteo.glitch.me/meteo/modificaDato
+// metodo per modificare un qualsiasi parametro del servizio.
+app.post('/meteo/modificaDato', (req, res) => {
+    if (!req.cookies.sessionToken) {
+        res.sendStatus(401);
+        return;
+    }
+
+    const chiave = req.cookies.sessionToken;
+    console.log('Token: ' + chiave);
+
+    jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
+        if (err) {
+            console.log(err);
+            res.sendStatus(401);
+
+        } else {
+            console.log(chiaveVerificata);
+            if (chiaveVerificata.body.sub == 'gestore') {
+                const id = Number.parseInt(req.query.id);
+                const campo = req.query.campo;
+                const nuovoValore = req.query.nuovoValore;
+
+                if (isNaN(id)) {
+                    res.sendStatus(400); 
+                    return;
+                }
+                if (!db.has(id)) {
+                    res.sendStatus(404); 
+                    return;
+                }
+
+                const riga = db.get(id);
+                if (campo == 'c') {
+                    riga.citta = nuovoValore;
+                } else if (campo == 'tn') {
+                    if (isNaN(nuovoValore)) {
+                        res.sendStatus(400); 
+                        return;
+                    }
+                    riga.temperatura.numero = nuovoValore;
+                } else if (campo == 'tum') {
+                    riga.temperatura.UM = nuovoValore;
+                } else if (campo == 'fa') {
+                    riga.fenomeniAtmosferici = nuovoValore;
+                } else if (campo == 'un') {
+                    if (isNaN(nuovoValore)) {
+                        res.sendStatus(400); 
+                        return;
+                    }
+                    riga.umidita.numero = nuovoValore;
+                } else if (campo == 'uum') {
+                    riga.umidita.UM = nuovoValore;
+                } else {
+                    res.sendStatus(404); 
+                    return;
+                }
+                res.sendStatus(200);
+            } else {
+                res.sendStatus(401);
+            }
+        }
+    });
+});
