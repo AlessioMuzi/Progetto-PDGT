@@ -31,7 +31,7 @@ logins.set('user1',
     hash: 'd4aaaab9dfe83430fc06099a34996628c021d41e4e0eefc763b6b5665fcd7aa4'
    });
 
-//funzione per l'autenticazione
+// funzione per l'autenticazione
 function authUser(req, res) {
     if (!req.headers.authorization) {
         res.sendStatus(401);
@@ -84,8 +84,8 @@ function authUser(req, res) {
     }
 }
 
-//POST https://progettopdgt-alessiomuzi-meteo.glitch.me/meteo/login
-//funzione per effetturare il login
+// POST https://progettopdgt-alessiomuzi-meteo.glitch.me/meteo/login
+// metodo per effetturare il login
 app.post('/meteo/login', (req, res) => {
     if (authUser(req, res)) {
         res.sendStatus(200);
@@ -94,7 +94,7 @@ app.post('/meteo/login', (req, res) => {
     }
 });
 
-//Database del servizio 
+// database del servizio 
 const db = new Map();
 
 db.set(1, {
@@ -135,3 +135,30 @@ db.set(3, {
 });
 
 var prossimoId = 4;
+
+// GET https://progettopdgt-alessiomuzi-meteo.glitch.me/meteo
+// restituisce tutti i dati meteo presenti nel servizio
+app.get('/meteo', (req, res) => {
+    if (!req.cookies.sessionToken) {
+        res.sendStatus(401);
+        return;
+    }
+
+    const chiave = req.cookies.sessionToken;
+    console.log('Token: ' + chiave);
+
+    jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
+        if (err) {
+            console.log(err);
+            res.sendStatus(401);
+
+        } else {
+            console.log(chiaveVerificata);
+            if (chiaveVerificata.body.sub == 'gestore' || chiaveVerificata.body.sub == 'utente') {
+                res.type('application/json').send(Array.from(db));
+            } else {
+                res.sendStatus(401);
+            }
+        }
+    });
+});
