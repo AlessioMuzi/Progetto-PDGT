@@ -333,10 +333,7 @@ app.delete('/meteo/eliminaCitta/:id', (req, res) => {
         }
     });
 });
-// definizione della porta d'ascolto per l'intero servizio
-const listener = app.listen(process.env.PORT, () => {
-    console.log("L'applicazione è in ascolto sulla porta " + listener.address().port);
-});
+
 // POST hhttps://progettopdgt-alessiomuzi-meteo.glitch.me/meteo/modificaDato
 // metodo per modificare un qualsiasi parametro di una città del servizio.
 app.post('/meteo/modificaDato', (req, res) => {
