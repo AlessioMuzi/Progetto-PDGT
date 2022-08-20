@@ -218,3 +218,75 @@ function verificaJson(primoJson, secondoJson) {
             return false;
     return true;
 }
+
+// POST https://progettopdgt-alessiomuzi-meteo.glitch.me/meteo/aggiungiCitta
+// metodo per aggiungere una nuova città nel database (JSON) del servizio. Richiede i permessi da admin.
+app.post('/meteo/aggiungiCitta', (req, res) => {
+  if (!req.cookies.sessionToken) {
+        res.sendStatus(401);
+        return;
+    }
+
+    const chiave = req.cookies.sessionToken;
+    console.log('Token: ' + chiave);
+
+    jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
+        if (err) {
+            console.log(err);
+            res.sendStatus(401);
+
+        } else {
+            console.log(chiaveVerificata);
+            if (chiaveVerificata.body.sub == 'gestore') 
+            {
+              // viene accettato solo un body con Content-Type application/json
+              if (req.get('Content-Type') != 'application/json') {
+                    res.sendStatus(415);
+                    return;
+                }
+
+                var baseJson = {
+                    citta: 'CittàDiProva',
+                    temperatura: {
+                        numero: 30,
+                        UM: 'celsius'
+                    },
+                    fenomeniAtmosferici: 'Sole',
+                    umidita: {
+                        numero: 80,
+                        UM: 'percento'
+                    }
+                };
+                if (verificaJson(JSON.stringify(baseJson), JSON.stringify(req.body)) != true) {
+                    res.sendStatus(400);
+                    return;
+                }
+              
+                console.log('Viene aggiunta la città ' + req.body.citta);
+              
+                var id = prossimoId++;
+                db.set(id, {
+                    citta: req.body.citta,
+                    temperatura: {
+                        numero: req.body.temperatura.numero,
+                        UM: req.body.temperatura.UM
+                    },
+                    fenomeniAtmosferici: req.body.fenomeniAtmosferici,
+                    umidita: {
+                        numero: req.body.umidita.numero,
+                        UM: req.body.umidita.UM
+                    }
+                });
+
+                res.json({
+                    id: id,
+                    citta: req.body.citta
+                });
+            } 
+            else 
+            {
+                res.sendStatus(401);
+            }
+        }
+    });
+});
