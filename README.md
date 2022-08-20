@@ -21,3 +21,15 @@ branch di lavoro dal sito Glitch.com. Il servizio meteo è stato sviluppato per 
 amministratore di sistema, di diverse città italiane. I dati possono essere richiesti all'API RESTful da un qualsiasi "utente" .
 
 ## Descrizione del architettura e delle scelte implementative
+
+
+## Documentazione dell’API implementata
+
+
+## Descrizione delle modalità della messa online del servizio
+
+
+## Esempio descrittivo di utilizzo del servizio Web
+
+
+## Roadmap di sviluppi futuri, eventuali modifiche da effettuare
