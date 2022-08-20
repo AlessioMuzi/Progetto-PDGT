@@ -398,3 +398,8 @@ app.post('/meteo/modificaDato', (req, res) => {
         }
     });
 });
+
+// definizione della porta d'ascolto per l'intero servizio
+const listener = app.listen(process.env.PORT, () => {
+    console.log("L'applicazione è in ascolto sulla porta " + listener.address().port);
+});
