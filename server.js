@@ -133,3 +133,5 @@ db.set(3, {
         UM: 'percento'
     }
 });
+
+var prossimoId = 4;
