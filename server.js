@@ -93,3 +93,43 @@ app.post('/meteo/login', (req, res) => {
         res.sendStatus(401);
     }
 });
+
+//Database del servizio 
+const db = new Map();
+
+db.set(1, {
+    citta: 'Urbino',
+    temperatura: {
+        numero: 27,
+        UM: 'celsius'
+    },
+    fenomeniAtmosferici: 'Sole',
+    umidita: {
+        numero: 80,
+        UM: 'percento'
+    }
+});
+db.set(2, {
+    citta: 'Civitanova Marche',
+    temperatura: {
+        numero: 33,
+        UM: 'celsius'
+    },
+    fenomeniAtmosferici: 'Sole',
+    umidita: {
+        numero: 77,
+        UM: 'percento'
+    }
+});
+db.set(3, {
+    citta: 'Milano',
+    temperatura: {
+        numero: 20,
+        UM: 'celsius'
+    },
+    fenomeniAtmosferici: 'Pioggia',
+    umidita: {
+        numero: 50,
+        UM: 'percento'
+    }
+});
