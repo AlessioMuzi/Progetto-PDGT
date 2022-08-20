@@ -32,7 +32,7 @@ logins.set('user1',
    });
 
 //funzione per l'autenticazione
-function autenticazione(req, res) {
+function authUser(req, res) {
     if (!req.headers.authorization) {
         res.sendStatus(401);
         return;
@@ -83,3 +83,13 @@ function autenticazione(req, res) {
         res.sendStatus(401);
     }
 }
+
+//POST https://progettopdgt-alessiomuzi-meteo.glitch.me/meteo/login
+//funzione per effetturare il login
+app.post('/meteo/login', (req, res) => {
+    if (authUser(req, res)) {
+        res.sendStatus(200);
+    } else {
+        res.sendStatus(401);
+    }
+});
