@@ -22,6 +22,10 @@ amministratore di sistema, di diverse città italiane. I dati possono essere ric
 
 ## Descrizione del servizio
 
+Il servizio implementato permette la raccolta e l'accesso di dati meteo in maniera digitali, per la gestione di un servizio web
+meteo disponibile per un numero arbitrario di utenti. Ogni utente che si registra al servizio ottiene la possiblità di visualizzare 
+i dati delle città, che possono essere modificati in ogni momento dall'amministratore di sistema. Esso effettua l'accesso tramite 
+login e password.
 
 ## Descrizione del architettura e delle scelte implementative
 
