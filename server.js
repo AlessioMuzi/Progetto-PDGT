@@ -34,14 +34,14 @@ logins.set('user1',
 // funzione per l'autenticazione
 function authUser(req, res) {
     if (!req.headers.authorization) {
-        res.sendStatus(401);
+        res.sendStatus(401); // UNAUTHORIZED
         return;
     }
 
     console.log('Autorizzazione: ' + req.headers.authorization);
 
     if (!req.headers.authorization.startsWith('Basic ')) {
-        res.sendStatus(401);
+        res.sendStatus(401); // UNAUTHORIZED
         return;
     }
 
@@ -54,7 +54,7 @@ function authUser(req, res) {
     const [login, password] = decoded.split(':');
 
     if (!logins.has(login)) {
-        res.sendStatus(401);
+        res.sendStatus(401); // UNAUTHORIZED
         return false;
     }
     const user = logins.get(login);
@@ -78,9 +78,9 @@ function authUser(req, res) {
         console.log('New token: ' + token.compact());
 
         res.cookie('sessionToken', token.compact());
-        res.sendStatus(200);
+        res.sendStatus(200); // OK
     } else {
-        res.sendStatus(401);
+        res.sendStatus(401); // UNAUTHORIZED
     }
 }
 
@@ -88,9 +88,9 @@ function authUser(req, res) {
 // metodo per effetturare il login
 app.post('/meteo/login', (req, res) => {
     if (authUser(req, res)) {
-        res.sendStatus(200);
+        res.sendStatus(200); // OK
     } else {
-        res.sendStatus(401);
+        res.sendStatus(401); // UNAUTHORIZED
     }
 });
 
@@ -140,7 +140,7 @@ var prossimoId = 4;
 // restituisce tutti i dati meteo presenti nel servizio
 app.get('/meteo', (req, res) => {
     if (!req.cookies.sessionToken) {
-        res.sendStatus(401);
+        res.sendStatus(401); // UNAUTHORIZED
         return;
     }
 
@@ -150,14 +150,14 @@ app.get('/meteo', (req, res) => {
     jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
         if (err) {
             console.log(err);
-            res.sendStatus(401);
+            res.sendStatus(401); // UNAUTHORIZED
 
         } else {
             console.log(chiaveVerificata);
             if (chiaveVerificata.body.sub == 'gestore' || chiaveVerificata.body.sub == 'utente') {
                 res.type('application/json').send(Array.from(db));
             } else {
-                res.sendStatus(401);
+                res.sendStatus(401); // UNAUTHORIZED
             }
         }
     });
@@ -167,8 +167,8 @@ app.get('/meteo', (req, res) => {
 // metodo che restituisce tutti i dati meteo di una data città partendo dall'id
 app.get('/meteo/meteoCitta/:id', (req, res) => {
     if (!req.cookies.sessionToken) {
-        res.sendStatus(401);
-        return;
+        res.sendStatus(401); // UNAUTHORIZED
+        return; 
     }
 
     const chiave = req.cookies.sessionToken;
@@ -177,7 +177,7 @@ app.get('/meteo/meteoCitta/:id', (req, res) => {
     jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
         if (err) {
             console.log(err);
-            res.sendStatus(401);
+            res.sendStatus(401); // UNAUTHORIZED
 
         } else {
             console.log(chiaveVerificata);
@@ -185,11 +185,11 @@ app.get('/meteo/meteoCitta/:id', (req, res) => {
                 const id = Number.parseInt(req.params.id);
 
                 if (isNaN(id)) {
-                    res.sendStatus(400);
+                    res.sendStatus(400); // BAD REQUEST
                     return;
                 }
                 if (!db.has(id)) {
-                    res.sendStatus(404);
+                    res.sendStatus(404); // NOT FOUND
                     return;
                 }
 
@@ -205,7 +205,7 @@ app.get('/meteo/meteoCitta/:id', (req, res) => {
                     }
                 });
             } else {
-                res.sendStatus(401);
+                res.sendStatus(401); // UNAUTHORIZED
             }
         }
     });
@@ -223,7 +223,7 @@ function verificaJson(primoJson, secondoJson) {
 // metodo per aggiungere una nuova città nel database (JSON) del servizio. Richiede i permessi da admin.
 app.post('/meteo/aggiungiCitta', (req, res) => {
   if (!req.cookies.sessionToken) {
-        res.sendStatus(401);
+        res.sendStatus(401); // UNAUTHORIZED
         return;
     }
 
@@ -233,15 +233,15 @@ app.post('/meteo/aggiungiCitta', (req, res) => {
     jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
         if (err) {
             console.log(err);
-            res.sendStatus(401);
-
+            res.sendStatus(401); // UNAUTHORIZED
+ 
         } else {
             console.log(chiaveVerificata);
             if (chiaveVerificata.body.sub == 'gestore') 
             {
               // viene accettato solo un body con Content-Type application/json
               if (req.get('Content-Type') != 'application/json') {
-                    res.sendStatus(415);
+                    res.sendStatus(415); // UNSUPPORTED MEDIA TIPE
                     return;
                 }
 
@@ -258,7 +258,7 @@ app.post('/meteo/aggiungiCitta', (req, res) => {
                     }
                 };
                 if (verificaJson(JSON.stringify(baseJson), JSON.stringify(req.body)) != true) {
-                    res.sendStatus(400);
+                    res.sendStatus(400); // BAD REQUEST
                     return;
                 }
               
@@ -285,7 +285,7 @@ app.post('/meteo/aggiungiCitta', (req, res) => {
             } 
             else 
             {
-                res.sendStatus(401);
+                res.sendStatus(401); // UNAUTHORIZED
             }
         }
     });
@@ -295,7 +295,7 @@ app.post('/meteo/aggiungiCitta', (req, res) => {
 // metodo per rimuovere una nuova città nel database (id) del servizio. Richiede i permessi da admin.
 app.delete('/meteo/eliminaCitta/:id', (req, res) => {
   if (!req.cookies.sessionToken) {
-        res.sendStatus(401);
+        res.sendStatus(401); // UNAUTHORIZED
         return;
     }
 
@@ -305,7 +305,7 @@ app.delete('/meteo/eliminaCitta/:id', (req, res) => {
     jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
         if (err) {
             console.log(err);
-            res.sendStatus(401);
+            res.sendStatus(401); // UNAUTHORIZED
 
         } else {
             console.log(chiaveVerificata);
@@ -313,22 +313,22 @@ app.delete('/meteo/eliminaCitta/:id', (req, res) => {
             {
               const id = Number.parseInt(req.params.id);
                 if (isNaN(id)) {
-                    res.sendStatus(400);
+                    res.sendStatus(400); // BAD REQUEST
                     return;
                 }
 
                 if (!db.has(id)) {
-                    res.sendStatus(404);
+                    res.sendStatus(404); // NOT FOUND
                     return;
                 }
 
                 db.delete(id);
 
-                res.sendStatus(200);
+                res.sendStatus(200); // OK
             } 
             else 
             {
-                res.sendStatus(401);
+                res.sendStatus(401); // UNAUTHORIZED
             }
         }
     });
@@ -338,7 +338,7 @@ app.delete('/meteo/eliminaCitta/:id', (req, res) => {
 // metodo per modificare un qualsiasi parametro di una città del servizio.
 app.post('/meteo/modificaDato', (req, res) => {
     if (!req.cookies.sessionToken) {
-        res.sendStatus(401);
+        res.sendStatus(401); // UNAUTHORIZED
         return;
     }
 
@@ -348,7 +348,7 @@ app.post('/meteo/modificaDato', (req, res) => {
     jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
         if (err) {
             console.log(err);
-            res.sendStatus(401);
+            res.sendStatus(401); // UNAUTHORIZED
 
         } else {
             console.log(chiaveVerificata);
@@ -358,11 +358,11 @@ app.post('/meteo/modificaDato', (req, res) => {
                 const nuovoValore = req.query.nuovoValore;
 
                 if (isNaN(id)) {
-                    res.sendStatus(400); 
+                    res.sendStatus(400); // BAD REQUEST
                     return;
                 }
                 if (!db.has(id)) {
-                    res.sendStatus(404); 
+                    res.sendStatus(404); // NOT FOUND
                     return;
                 }
 
@@ -371,7 +371,7 @@ app.post('/meteo/modificaDato', (req, res) => {
                     riga.citta = nuovoValore;
                 } else if (campo == 'tn') {
                     if (isNaN(nuovoValore)) {
-                        res.sendStatus(400); 
+                        res.sendStatus(400); // BAD REQUEST
                         return;
                     }
                     riga.temperatura.numero = nuovoValore;
@@ -381,19 +381,19 @@ app.post('/meteo/modificaDato', (req, res) => {
                     riga.fenomeniAtmosferici = nuovoValore;
                 } else if (campo == 'un') {
                     if (isNaN(nuovoValore)) {
-                        res.sendStatus(400); 
+                        res.sendStatus(400); // BAD REQUEST
                         return;
                     }
                     riga.umidita.numero = nuovoValore;
                 } else if (campo == 'uum') {
                     riga.umidita.UM = nuovoValore;
                 } else {
-                    res.sendStatus(404); 
+                    res.sendStatus(404); // NOT FOUND
                     return;
                 }
-                res.sendStatus(200);
+                res.sendStatus(200); // OK
             } else {
-                res.sendStatus(401);
+                res.sendStatus(401); // UNAUTHORIZED
             }
         }
     });
