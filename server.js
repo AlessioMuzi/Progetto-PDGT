@@ -210,3 +210,11 @@ app.get('/meteo/meteoCitta/:id', (req, res) => {
         }
     });
 });
+
+// funzione per verificare la struttura di due file JSON, restituisce true se hanno la stessa struttura, altrimenti false
+function verificaJson(primoJson, secondoJson) {
+    for (var i in primoJson)
+        if (!secondoJson.hasOwnProperty(i))
+            return false;
+    return true;
+}
