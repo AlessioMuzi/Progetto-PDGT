@@ -18,7 +18,7 @@ logins.set('admin',
    {
     id: 1,
     salt: '59603',
-    hash: '676078535870a7fc8b536ff352a9cdd74d376467c40b4ca542b2695abe9b507a'
+    hash: 'cb327240b5ff041f73fba1bb4f17269634189a23bc870b8959a01eee472c428b'
    });
 
 // utente generico
@@ -28,7 +28,7 @@ logins.set('user1',
    {
     id: 2,
     salt: '68103',
-    hash: 'd4aaaab9dfe83430fc06099a34996628c021d41e4e0eefc763b6b5665fcd7aa4'
+    hash: '8c38fbf9fa0516b2a6f09566051ade70957377646219b97b342e21797a467bcd'
    });
 
 // funzione per l'autenticazione
