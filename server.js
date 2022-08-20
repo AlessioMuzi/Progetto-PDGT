@@ -335,7 +335,7 @@ app.delete('/meteo/eliminaCitta/:id', (req, res) => {
 });
 
 // POST hhttps://progettopdgt-alessiomuzi-meteo.glitch.me/meteo/modificaDato
-// metodo per modificare un qualsiasi parametro del servizio.
+// metodo per modificare un qualsiasi parametro di una città del servizio.
 app.post('/meteo/modificaDato', (req, res) => {
     if (!req.cookies.sessionToken) {
         res.sendStatus(401);
