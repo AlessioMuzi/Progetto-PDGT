@@ -11,7 +11,7 @@ Matricola: 299329
 Università di Urbino "Carlo Bo"  
 Laurea triennale Informatica Applicata  
 Piattaforme Digitali per la Gestione del Territorio  
-Sessione autunnale  
+Sessione autunnale 2021/2022
 
 ## Introduzione
 
