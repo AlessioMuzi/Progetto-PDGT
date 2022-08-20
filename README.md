@@ -15,4 +15,6 @@ Sessione autunnale
 
 ## Descrizione del web service
 
-Il web service sviluppato per il progetto di esame ha come argomento d'interesse il meteo.
+Il web service sviluppato per il progetto di esame ha come argomento d'interesse il meteo. L'API è stata sviluppata utilizzando
+Git e GitHub in due branch di lavoro, denominate "main" e "glitch": il primo branch è quella principale, mentre il secondo è il
+branch di lavoro dal sito Glitch.com.
