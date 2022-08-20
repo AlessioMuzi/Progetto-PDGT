@@ -3,7 +3,7 @@ const express = require('express');
 const cookieparser = require('cookie-parser');
 const sha256 = require('js-sha256');
 const jwt = require('njwt');
-const cod_segreto = process.env.JWT_SECRET;
+const segreto = process.env.JWT_SECRET;
 const app = express();
 app.use(express.json());
 app.use(cookieparser());
@@ -73,8 +73,8 @@ function authUser(req, res) {
             iss: 'meteorologia'
         };
 
-        const token = jwt.create(claims, cod_segreto);
-        token.setExpiration(new Date().getTime() + 1200000); //= 20 minuti
+        const token = jwt.create(claims, segreto);
+        token.setExpiration(new Date().getTime() + 600000); // = 10 minuti
         console.log('New token: ' + token.compact());
 
         res.cookie('sessionToken', token.compact());
@@ -147,7 +147,7 @@ app.get('/meteo', (req, res) => {
     const chiave = req.cookies.sessionToken;
     console.log('Token: ' + chiave);
 
-    jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
+    jwt.verify(chiave, segreto, (err, chiaveVerificata) => {
         if (err) {
             console.log(err);
             res.sendStatus(401); // UNAUTHORIZED
@@ -174,7 +174,7 @@ app.get('/meteo/meteoCitta/:id', (req, res) => {
     const chiave = req.cookies.sessionToken;
     console.log('Token: ' + chiave);
 
-    jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
+    jwt.verify(chiave, segreto, (err, chiaveVerificata) => {
         if (err) {
             console.log(err);
             res.sendStatus(401); // UNAUTHORIZED
@@ -230,7 +230,7 @@ app.post('/meteo/aggiungiCitta', (req, res) => {
     const chiave = req.cookies.sessionToken;
     console.log('Token: ' + chiave);
 
-    jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
+    jwt.verify(chiave, segreto, (err, chiaveVerificata) => {
         if (err) {
             console.log(err);
             res.sendStatus(401); // UNAUTHORIZED
@@ -302,7 +302,7 @@ app.delete('/meteo/eliminaCitta/:id', (req, res) => {
     const chiave = req.cookies.sessionToken;
     console.log('Token: ' + chiave);
 
-    jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
+    jwt.verify(chiave, segreto, (err, chiaveVerificata) => {
         if (err) {
             console.log(err);
             res.sendStatus(401); // UNAUTHORIZED
@@ -345,7 +345,7 @@ app.post('/meteo/modificaDato', (req, res) => {
     const chiave = req.cookies.sessionToken;
     console.log('Token: ' + chiave);
 
-    jwt.verify(chiave, cod_segreto, (err, chiaveVerificata) => {
+    jwt.verify(chiave, segreto, (err, chiaveVerificata) => {
         if (err) {
             console.log(err);
             res.sendStatus(401); // UNAUTHORIZED
