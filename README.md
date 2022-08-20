@@ -42,6 +42,9 @@ I package utilizzati, integrati nel progetto tramite npm (*Node Pacakge Manager*
 Per quanto riguarda il rilascio e il testing del servizio, sono stati utilizzati il già citato *Glitch.com* e *Postman.com*, 
 il quale funge da client tramite richieste HTTP.
 
+La struttura dell'API si basa su *expressJS*, un framework minimale e flessibile per NodeJS che semplifica lo sviluppo di web
+services tramite un'infrastruttura robusta e ricca di funzionalità.
+
 # Documentazione dell’API implementata
 
 ## Descrizione dei metodi (paradigma CRUD)
