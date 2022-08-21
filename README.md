@@ -129,3 +129,7 @@ Esempio di utilizzo del servizio web:
 <img src="https://cdn.glitch.global/ec544d33-c9fa-4d45-b8c9-3b05a4fa6504/5.JPG?v=1661101855089" alt="Esempio rimozione città">
 
 ## Roadmap di sviluppi futuri, eventuali modifiche da effettuare
+
+Nonostante il servizio web sia stato completato e sia interamente funzionante, sono molte le aggiunte e modificche che possono
+essere effettuate: sviluppo di un client in PHP/HTML con CD su Heroku, integrazione con API come OpenWeatherAPI (che però farebbe
+perdere di utilità all'amministratore di sistema), utilizzo di un database SQL, generazione randomica degli hash per l'autenticazione...
