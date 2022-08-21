@@ -114,18 +114,18 @@ Una collezione di richieste HTTP sono disponibili nel workspace Postman https://
 Esempio di utilizzo del servizio web:
 
 **Login:**
-<img src="https://github.com/AlessioMuzi/Progetto-PDGT/blob/main/Immagini/1.JPG?raw=true" alt="Esempio login">
+<img src="https://cdn.glitch.global/ec544d33-c9fa-4d45-b8c9-3b05a4fa6504/1.JPG?v=1661101848060" alt="Esempio login">
 
 **Visualizzazione di tutti i dati:**
-<img src="https://github.com/AlessioMuzi/Progetto-PDGT/blob/main/Immagini/2.JPG?raw=true" alt="Esempio visuallizzazione tutti dati">
+<img src="https://cdn.glitch.global/ec544d33-c9fa-4d45-b8c9-3b05a4fa6504/2.JPG?v=1661101848925" alt="Esempio visuallizzazione tutti dati">
 
 **Visualizzazione dei dati di una singola città:**
-<img src="https://github.com/AlessioMuzi/Progetto-PDGT/blob/main/Immagini/3.JPG?raw=true" alt="Esempio visualizzazione dati di una città">
+<img src="https://cdn.glitch.global/ec544d33-c9fa-4d45-b8c9-3b05a4fa6504/3.JPG?v=1661101851415" alt="Esempio visualizzazione dati di una città">
 
 **Aggiunta dei dati di una città:**
-<img src="https://github.com/AlessioMuzi/Progetto-PDGT/blob/main/Immagini/4.JPG?raw=true" alt="Esempio aggiunta città">
+<img src="https://cdn.glitch.global/ec544d33-c9fa-4d45-b8c9-3b05a4fa6504/4.JPG?v=1661101854023" alt="Esempio aggiunta città">
 
 **Rimozione di una città:**
-<img src="https://github.com/AlessioMuzi/Progetto-PDGT/blob/main/Immagini/5.JPG?raw=true" alt="Esempio rimozione città">
+<img src="https://cdn.glitch.global/ec544d33-c9fa-4d45-b8c9-3b05a4fa6504/5.JPG?v=1661101855089" alt="Esempio rimozione città">
 
 ## Roadmap di sviluppi futuri, eventuali modifiche da effettuare
