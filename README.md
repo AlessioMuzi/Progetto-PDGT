@@ -54,7 +54,24 @@ L'API fornisce un elenco di metodi utili a visualizzare i dati del meteo. Essi s
 
 I metodi esposti dal servizio sono:
 
+<ul>
+  <li> <b>POST</b> (/meteo/login) per effettuare il login al servizio tramite il sistema di Basic Authentication dell'API.
+                                  i vari nomi utente e password sono contenuti nel file "server.js". Il sistema
+                                  opera tramite JWT e ogni token dura per 10 minuti.</li>
+  <li> <b>GET</b> (/meteo) per ottenere tutti i dati attualmente disponibili nel servizio. Questo metodo non richiede alcun
+                           body ma richiede di essere autenticato dal sistema.</li>
+  <li> <b>GET</b> (/meteo/:id) per ottenere i dati di una specifica città tramite il campo <b>"id"</b>. Richiede di essere autenticati
+                               nel sistema </li>
+  <li> <b>POST</b> (/meteo/aggiungiCitta) per aggiungere una nuova città nell'API. Questa azione è eseguibile solo dall'amministratore
+                                          di sistema. Il body della richiesta deve essere un file JSON (application-JSON) in un 
+                                          formato conforme.</li>
+  <li> <b>DELETE</b> (/meteo/eliminaCitta/:id) per rimuovere una città dall'API tramite il campo <b>"id"</b>. Questa azione è eseguibile 
+                                               solo dall'amministratore di sistema.</li>
+  <li> <b>POST</b> (/meteo/modificaDato) per modificare un dato di una città. Questa azione è eseguibili solo dall'amministratore
+                                         di sistema.</li>
+</ul>
 
+Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'intestazione contiene il content-type <b>'application/json'</b>.
 
 ## Descrizione delle modalità della messa online del servizio e dei servizi utilizzati
 
