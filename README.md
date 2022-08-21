@@ -133,3 +133,11 @@ Esempio di utilizzo del servizio web:
 Nonostante il servizio web sia stato completato e sia interamente funzionante, sono molte le aggiunte e modificche che possono
 essere effettuate: sviluppo di un client in PHP/HTML con CD su Heroku, integrazione con API come OpenWeatherAPI (che però farebbe
 perdere di utilità all'amministratore di sistema), utilizzo di un database SQL, generazione randomica degli hash per l'autenticazione...
+
+
+**Link utili:** 
+
+- Repository Github https://github.com/AlessioMuzi/Progetto-PDGT
+- Repository Glitch.com: Repository Glitch: https://glitch.com/edit/#!/progettopdgt-alessiomuzi-meteo
+- Endpoint web service: https://progettopdgt-alessiomuzi-meteo.glitch.me/
+- Client Postman: https://web.postman.co/workspace/e546bc24-1681-4ec0-89d5-8f83f863405a
