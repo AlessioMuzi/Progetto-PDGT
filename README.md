@@ -81,6 +81,16 @@ Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'in
 
 Il servizio è stato sviluppato e messo online tramite <i>a</i>. L'endpoint di partenza è: "https://progettopdgt-alessiomuzi-meteo.glitch.me/".
 
+Durante lo sviluppo del servizio, sono stati utilizzati molte altre risore web:
+
+<ul>
+  <li> <b>ExpressJS</b> (https://expressjs.com/en/4x/api.html) per leggere la documentazione dell'API. </li>
+  <li> <b>JSONPlaceholder</b> (https://jsonplaceholder.typicode.com/) per dei file JSON generici. </li>
+  <li> <b>Postman</b> (https://web.postman.co/workspace/e546bc24-1681-4ec0-89d5-8f83f863405a) per effettuare richieste HTTP e
+                      per avere funzione di client.</li>
+  <li> <b>Coding Tools: sha256</b> (https://coding.tools/sha256) per crittare l'hash per la Basic Auth.</li>
+  <li> il già citato <b>Glitch.com</b> per lo sviluppo e rilascio continuo.</li>
+</ul>
 
 ## Esempio descrittivo di utilizzo del servizio Web
 
