@@ -67,13 +67,19 @@ I metodi esposti dal servizio sono:
                                           formato conforme.</li>
   <li> <b>DELETE</b> (/meteo/eliminaCitta/:id) per rimuovere una città dall'API tramite il campo <b>"id"</b>. Questa azione è eseguibile 
                                                solo dall'amministratore di sistema.</li>
-  <li> <b>POST</b> (/meteo/modificaDato) per modificare un dato di una città. Questa azione è eseguibili solo dall'amministratore
-                                         di sistema.</li>
+  <li> <b>POST</b> (/meteo/modificaDato/:id/:campo/:nuovoValore) per modificare un dato di una città. Questa azione è eseguibili solo 
+                                                                 dall'amministratore di sistema. La modifica avviene tramite <b>"id"</b>, 
+                                                                 <b>"campo"</b> e <b>"nuovoValore"</b>. I valori accettati per campo
+                                                                 sono "c, tn, tum, fa, un, umm", che rappresentano nome, temperatura,
+                                                                 unità di misura della temperatura, fenomeni atmosferici, umidità e
+                                                                 unità di misura dell'umidità.</li>
 </ul>
 
 Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'intestazione contiene il content-type <b>'application/json'</b>.
 
 ## Descrizione delle modalità della messa online del servizio e dei servizi utilizzati
+
+Il servizio è stato sviluppato e messo online tramite <i>a</i>. L'endpoint di partenza è: "https://progettopdgt-alessiomuzi-meteo.glitch.me/".
 
 
 ## Esempio descrittivo di utilizzo del servizio Web
