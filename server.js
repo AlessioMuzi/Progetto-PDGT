@@ -246,7 +246,7 @@ app.post('/meteo/aggiungiCitta', (req, res) => {
                 }
 
                 var baseJson = {
-                    citta: 'CittàDiProva',
+                    citta: 'Torino',
                     temperatura: {
                         numero: 30,
                         UM: 'celsius'
