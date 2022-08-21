@@ -23,15 +23,15 @@ utente.
 
 ## Descrizione del servizio
 
-Il servizio implementato permette la raccolta e l'accesso di dati meteo in maniera digitali, per la gestione di un servizio web
-meteo disponibile per un numero arbitrario di utenti. Ogni utente che si registra al servizio ottiene la possiblità di visualizzare 
+Il servizio implementato permette la raccolta e l'accesso di dati meteo in maniera digitale, per la gestione di un servizio web
+meteo disponibile a un numero arbitrario di utenti. Ogni utente che si registra al servizio ottiene la possiblità di visualizzare 
 i dati delle città, che possono essere modificati in ogni momento dall'amministratore di sistema. Esso effettua l'accesso tramite 
-login e password.
+login e password. Il servizio è gestito da un amministratore che cura i dati utili.
 
 ## Descrizione dell'architettura e delle scelte implementative
 
 Il linguaggio di programmazione utilizzato è *JavaScript*. L'ambiente di lavoro è quello di NodeJS, sfruttato tramite il sito
-Glitch.com, che permette sia la scrittura di codice sia il deployment di web services. Il servzio rispetta tutte le 
+Glitch.com, che permette sia la scrittura di codice sia il deployment continuo. Il servzio rispetta tutte le 
 caratteristiche delle API RESTful. Per quanto riguarda l'autenticazione del client, sono stati usati dei JWT (*JSON Web Token*).
 I package utilizzati, integrati nel progetto tramite npm (*Node Pacakge Manager*), sono:
 
@@ -49,8 +49,14 @@ services tramite un'infrastruttura robusta e ricca di funzionalità.
 
 ## Descrizione dei metodi (paradigma CRUD)
 
+L'API fornisce un elenco di metodi utili a visualizzare i dati del meteo. Essi seguono le operazioni basilari **CRUD**, ovvero
+**Create**, **Read**, **Update** e **Destroy**.
 
-## Descrizione delle modalità della messa online del servizio
+I metodi esposti dal servizio sono:
+
+
+
+## Descrizione delle modalità della messa online del servizio e dei servizi utilizzati
 
 
 ## Esempio descrittivo di utilizzo del servizio Web
