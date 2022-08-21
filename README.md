@@ -60,8 +60,8 @@ I metodi esposti dal servizio sono:
                                   opera tramite JWT e ogni token dura per 10 minuti.</li>
   <li> <b>GET</b> (/meteo) per ottenere tutti i dati attualmente disponibili nel servizio. Questo metodo non richiede alcun
                            body ma richiede di essere autenticato dal sistema.</li>
-  <li> <b>GET</b> (/meteo/:id) per ottenere i dati di una specifica città tramite il campo <b>"id"</b>. Richiede di essere autenticati
-                               nel sistema </li>
+  <li> <b>GET</b> (/meteo/meteoCitta/:id) per ottenere i dati di una specifica città tramite il campo <b>"id"</b>. Richiede di essere autenticati
+                                          nel sistema </li>
   <li> <b>POST</b> (/meteo/aggiungiCitta) per aggiungere una nuova città nell'API. Questa azione è eseguibile solo dall'amministratore
                                           di sistema. Il body della richiesta deve essere un file JSON (application-JSON) in un 
                                           formato conforme.</li>
