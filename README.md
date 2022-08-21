@@ -109,23 +109,23 @@ Durante lo sviluppo del servizio, sono stati utilizzati molte altre risore web:
 
 ## Esempio descrittivo di utilizzo del servizio Web
 
-Una collezione di richieste HTTP sono disponibili nel workspace Postman nella sezione precedente.
+Una collezione di richieste HTTP sono disponibili nel workspace Postman https://www.getpostman.com/collections/b6f9af610be08566a253.
 
 Esempio di utilizzo del servizio web:
 
 **Login:**
-
+<img src="https://github.com/AlessioMuzi/Progetto-PDGT/blob/main/Immagini/1.JPG?raw=true" alt="Esempio login">
 
 **Visualizzazione di tutti i dati:**
-
+<img src="https://github.com/AlessioMuzi/Progetto-PDGT/blob/main/Immagini/2.JPG?raw=true" alt="Esempio visuallizzazione tutti dati">
 
 **Visualizzazione dei dati di una singola città:**
-
+<img src="https://github.com/AlessioMuzi/Progetto-PDGT/blob/main/Immagini/3.JPG?raw=true" alt="Esempio visualizzazione dati di una città">
 
 **Aggiunta dei dati di una città:**
-
+<img src="https://github.com/AlessioMuzi/Progetto-PDGT/blob/main/Immagini/4.JPG?raw=true" alt="Esempio aggiunta città">
 
 **Rimozione di una città:**
-
+<img src="https://github.com/AlessioMuzi/Progetto-PDGT/blob/main/Immagini/5.JPG?raw=true" alt="Esempio rimozione città">
 
 ## Roadmap di sviluppi futuri, eventuali modifiche da effettuare
