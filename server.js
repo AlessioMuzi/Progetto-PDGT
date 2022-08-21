@@ -74,7 +74,7 @@ function authUser(req, res) {
         };
 
         const token = jwt.create(claims, segreto);
-        token.setExpiration(new Date().getTime() + 600000); // = 10 minuti
+        token.setExpiration(new Date().getTime() + 600000); // =10 minuti
         console.log('New token: ' + token.compact());
 
         res.cookie('sessionToken', token.compact());
@@ -154,7 +154,7 @@ app.get('/meteo', (req, res) => {
 
         } else {
             console.log(chiaveVerificata);
-            if (chiaveVerificata.body.sub == 'gestore' || chiaveVerificata.body.sub == 'utente') {
+            if (chiaveVerificata.body.sub == 'admin' || chiaveVerificata.body.sub == 'user1') {
                 res.type('application/json').send(Array.from(db));
             } else {
                 res.sendStatus(401); // UNAUTHORIZED
@@ -181,7 +181,7 @@ app.get('/meteo/meteoCitta/:id', (req, res) => {
 
         } else {
             console.log(chiaveVerificata);
-            if (chiaveVerificata.body.sub == 'gestore' || chiaveVerificata.body.sub == 'utente') {
+            if (chiaveVerificata.body.sub == 'admin' || chiaveVerificata.body.sub == 'user1') {
                 const id = Number.parseInt(req.params.id);
 
                 if (isNaN(id)) {
@@ -237,7 +237,7 @@ app.post('/meteo/aggiungiCitta', (req, res) => {
  
         } else {
             console.log(chiaveVerificata);
-            if (chiaveVerificata.body.sub == 'gestore') 
+            if (chiaveVerificata.body.sub == 'admin') 
             {
               // viene accettato solo un body con Content-Type application/json
               if (req.get('Content-Type') != 'application/json') {
@@ -309,7 +309,7 @@ app.delete('/meteo/eliminaCitta/:id', (req, res) => {
 
         } else {
             console.log(chiaveVerificata);
-            if (chiaveVerificata.body.sub == 'gestore') 
+            if (chiaveVerificata.body.sub == 'admin') 
             {
               const id = Number.parseInt(req.params.id);
                 if (isNaN(id)) {
@@ -352,7 +352,7 @@ app.post('/meteo/modificaDato', (req, res) => {
 
         } else {
             console.log(chiaveVerificata);
-            if (chiaveVerificata.body.sub == 'gestore') {
+            if (chiaveVerificata.body.sub == 'admin') {
                 const id = Number.parseInt(req.query.id);
                 const campo = req.query.campo;
                 const nuovoValore = req.query.nuovoValore;
