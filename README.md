@@ -77,6 +77,21 @@ I metodi esposti dal servizio sono:
 
 Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'intestazione contiene il content-type <b>'application/json'</b>.
 
+Formato del body:
+
+<pre>{
+   "citta": nomeCitta,
+   "temperatura":{
+      "numero": temperatura,
+      "UM": unita_di_misura
+   },
+   "fenomeniAtmosferici": tipo_di_fenomeno,
+   "umidita":{
+      "numero": umidita,
+      "UM": unita_di_misura
+   }
+}</pre>
+
 ## Descrizione delle modalità della messa online del servizio e dei servizi utilizzati
 
 Il servizio è stato sviluppato e messo online tramite <i>a</i>. L'endpoint di partenza è: "https://progettopdgt-alessiomuzi-meteo.glitch.me/".
@@ -94,5 +109,8 @@ Durante lo sviluppo del servizio, sono stati utilizzati molte altre risore web:
 
 ## Esempio descrittivo di utilizzo del servizio Web
 
+Una collezione di richieste HTTP sono disponibili nel workspace Postman nella sezione precedente.
+
+Esempio di utilizzo del servizio web:
 
 ## Roadmap di sviluppi futuri, eventuali modifiche da effettuare
