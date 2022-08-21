@@ -113,4 +113,19 @@ Una collezione di richieste HTTP sono disponibili nel workspace Postman nella se
 
 Esempio di utilizzo del servizio web:
 
+**Login:**
+
+
+**Visualizzazione di tutti i dati:**
+
+
+**Visualizzazione dei dati di una singola città:**
+
+
+**Aggiunta dei dati di una città:**
+
+
+**Rimozione di una città:**
+
+
 ## Roadmap di sviluppi futuri, eventuali modifiche da effettuare
