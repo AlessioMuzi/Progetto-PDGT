@@ -70,7 +70,7 @@ function authUser(req, res) {
     if (hashed == user.hash) {
         const claims = {
             sub: login,
-            iss: 'meteorologia'
+            iss: 'meteo'
         };
 
         const token = jwt.create(claims, segreto);
