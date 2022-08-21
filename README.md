@@ -52,7 +52,7 @@ services tramite un'infrastruttura robusta e ricca di funzionalità.
 L'API fornisce un elenco di metodi utili a visualizzare i dati del meteo. Essi seguono le operazioni basilari **CRUD**, ovvero
 **Create**, **Read**, **Update** e **Destroy**.
 
-I metodi esposti dal servizio sono:
+I metodi esposti dal servizio e i corrispetivi path sono:
 
 <ul>
   <li> <b>POST</b> (/meteo/login) per effettuare il login al servizio tramite il sistema di Basic Authentication dell'API.
