@@ -1,6 +1,8 @@
 # Progetto Piattaforme Digitali per la Gestione del Territorio - Relazione
 
-Progetto per l'esame di Piattaforme Digitali per la Gestione del Territorio, sessione autunnale, a.a. 2021/2022
+Progetto per l'esame di Piattaforme Digitali per la Gestione del Territorio, sessione autunnale, a.a. 2021/2022  
+
+# Web API per dati meterologici con autenticazione
 
 ## Studente:
 
@@ -19,7 +21,7 @@ Il web service sviluppato per il progetto di esame ha come argomento d'interesse
 Git e GitHub in due branch di lavoro, denominate "*main*" e "*glitch*": il primo branch è quella principale/di rilascio,
 mentre il secondo è il branch di lavoro dal sito Glitch.com. Il servizio meteo è stato sviluppato per fornire dei dati meteo, 
 caricati da un amministratore di sistema, di diverse città italiane. I dati possono essere richiesti all'API RESTful da un qualsiasi 
-utente.
+utente. Il formato utilizzato per i dati è JSON, molto flessibile e facile da implementare.
 
 ## Descrizione del servizio
 
@@ -77,7 +79,7 @@ I metodi esposti dal servizio e i corrispetivi path sono:
 
 Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'intestazione contiene il content-type <b>'application/json'</b>.
 
-Formato del body:
+Formato del body JSON:
 
 <pre>{
    "citta": nomeCitta,
@@ -109,7 +111,7 @@ Durante lo sviluppo del servizio, sono stati utilizzati molte altre risore web:
 
 ## Esempio descrittivo di utilizzo del servizio Web
 
-Una collezione di richieste HTTP sono disponibili nel workspace Postman https://www.getpostman.com/collections/b6f9af610be08566a253.
+Una collezione di richieste HTTP predefinite sono disponibili nel workspace Postman precedentemente citato.
 
 Esempio di utilizzo del servizio web:
 
@@ -130,7 +132,7 @@ Esempio di utilizzo del servizio web:
 
 ## Roadmap di sviluppi futuri, eventuali modifiche da effettuare
 
-Nonostante il servizio web sia stato completato e sia interamente funzionante, sono molte le aggiunte e modificche che possono
+Nonostante il servizio web sia stato completato e sia interamente funzionante, sono molte le aggiunte e modifiche che possono
 essere effettuate: sviluppo di un client in PHP/HTML con CD su Heroku, integrazione con API come OpenWeatherAPI (che però farebbe
 perdere di utilità all'amministratore di sistema), utilizzo di un database SQL, generazione randomica degli hash per l'autenticazione...
 
