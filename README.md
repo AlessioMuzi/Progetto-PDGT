@@ -101,9 +101,9 @@ Formato del body JSON:
    }
 }</pre>
 
-## Descrizione delle modalità della messa online del servizio e dei servizi utilizzati
+## Descrizione delle modalità di messa online del servizio e altre risorse utilizzate
 
-Il servizio è stato sviluppato e messo online tramite <i>a</i>. L'endpoint di partenza è: "https://progettopdgt-alessiomuzi-meteo.glitch.me/".
+Il servizio è stato sviluppato e messo online tramite <i>Glitch.com</i>. L'endpoint di partenza è: "https://progettopdgt-alessiomuzi-meteo.glitch.me/".
 
 Durante lo sviluppo del servizio, sono stati utilizzati molte altre risore web:
 
