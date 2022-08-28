@@ -30,6 +30,12 @@ meteo disponibile a un numero arbitrario di utenti. Ogni utente che si registra 
 i dati delle città, che possono essere modificati in ogni momento dall'amministratore di sistema. Esso effettua l'accesso tramite 
 login e password. Il servizio è gestito da un amministratore che cura i dati utili.
 
+## Casi d'uso
+
+Considerando le caratteristiche del servizio, cioè il fatto di essere gestito completamente da un amministratore di sistema e non
+collegato ad altri servizi esterni, può essere utile se per esempio dobbiamo comunicare dei dati sicuri a un limitato numero di 
+persone. In questo caso l'entità che si occupa di verificare i dati è l'amministratore di sistema.
+
 ## Descrizione dell'architettura e delle scelte implementative
 
 Il linguaggio di programmazione utilizzato è *JavaScript*. L'ambiente di lavoro è quello di NodeJS, sfruttato tramite il sito
