@@ -99,6 +99,7 @@ const db = new Map();
 
 db.set(1, {
     citta: 'Urbino',
+    data: "2022-08-10T13:45:00.000Z",
     temperatura: {
         numero: 27,
         UM: 'celsius'
@@ -111,6 +112,7 @@ db.set(1, {
 });
 db.set(2, {
     citta: 'Civitanova Marche',
+    data: "2022-08-10T13:45:00.000Z",
     temperatura: {
         numero: 33,
         UM: 'celsius'
@@ -123,6 +125,7 @@ db.set(2, {
 });
 db.set(3, {
     citta: 'Milano',
+    data: "2022-08-10T13:45:00.000Z",
     temperatura: {
         numero: 20,
         UM: 'celsius'
@@ -198,6 +201,7 @@ app.get('/meteo/meteoCitta/:id', (req, res) => {
                     'application/json': () => {
                         res.json({
                             citta: meteo.citta,
+                            data: meteo.data,
                             temperatura: meteo.temperatura,
                             fenomeniAtmosferici: meteo.fenomeniAtmosferici,
                             umidita: meteo.umidita
@@ -247,6 +251,7 @@ app.post('/meteo/aggiungiCitta', (req, res) => {
 
                 var baseJson = {
                     citta: 'Torino',
+                    data: "2022-08-10T13:45:00.000Z",
                     temperatura: {
                         numero: 30,
                         UM: 'celsius'
@@ -267,6 +272,7 @@ app.post('/meteo/aggiungiCitta', (req, res) => {
                 var id = prossimoId++;
                 db.set(id, {
                     citta: req.body.citta,
+                    data: req.body.data,
                     temperatura: {
                         numero: req.body.temperatura.numero,
                         UM: req.body.temperatura.UM
