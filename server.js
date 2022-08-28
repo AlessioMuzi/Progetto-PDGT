@@ -137,8 +137,6 @@ db.set(3, {
     }
 });
 
-var prossimoId = 4;
-
 // GET https://progettopdgt-alessiomuzi-meteo.glitch.me/meteo
 // restituisce tutti i dati meteo presenti nel servizio
 app.get('/meteo', (req, res) => {
@@ -222,6 +220,8 @@ function verificaJson(primoJson, secondoJson) {
             return false;
     return true;
 }
+
+var prossimoId = 4;
 
 // POST https://progettopdgt-alessiomuzi-meteo.glitch.me/meteo/aggiungiCitta
 // metodo per aggiungere una nuova città nel database (JSON) del servizio. Richiede i permessi da admin.
