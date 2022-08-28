@@ -89,6 +89,7 @@ Formato del body JSON:
 
 <pre>{
    "citta": nomeCitta,
+   "data": "data" (in formato stringa ISO 8601: "YYYY-MM-DDTHH:MM:SS.mmmZ",
    "temperatura":{
       "numero": temperatura,
       "UM": unita_di_misura
