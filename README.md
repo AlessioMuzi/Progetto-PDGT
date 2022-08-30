@@ -116,6 +116,9 @@ Durante lo sviluppo del servizio, sono stati utilizzati molte altre risore web:
   <li> il già citato <b>Glitch.com</b> per lo sviluppo e rilascio continuo.</li>
 </ul>
 
+Inoltre era previsto l'utilizzo dell'API GeoJson per aggiungere le coordinate delle città ma non è stato possibile 
+per problemi di compatibilità con il servizio sviluppato.
+
 ## Esempio descrittivo di utilizzo del servizio Web
 
 Una collezione di richieste HTTP predefinite sono disponibili nel workspace Postman precedentemente citato.
